@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Controller\DAO.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Education.cs" />
     <Compile Include="View\categorial\DataCategorial.cs">
       <SubType>Form</SubType>
     </Compile>

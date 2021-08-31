@@ -53,7 +53,7 @@ namespace ChurchDataManagement.Controller
         }
 
         #region CategoryFunctionSQL
-  public List<Category> getCategories() {
+        public List<Category> getCategories() {
             List<Category> categories = new List<Category>();
             using (SQLiteTransaction trans = sqliteConn.BeginTransaction())
             {
@@ -108,9 +108,65 @@ namespace ChurchDataManagement.Controller
                 return comm.ExecuteNonQuery() > 0;
             }
         }
+        #endregion
 
+        #region EducationFunctionSQL
+        public List<Education> getEducations()
+        {
+            List<Education> categories = new List<Education>();
+            using (SQLiteTransaction trans = sqliteConn.BeginTransaction())
+            {
+                string query = "SELECT * FROM t_education ";
+                SQLiteCommand comm = new SQLiteCommand(query, sqliteConn);
+                trans.Commit();
+                SQLiteDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    categories.Add(new Education(reader.GetInt32(0),
+                        reader.GetString(1), reader.GetString(2)));
+                }
+            }
+            return categories;
+        }
 
+        public bool InsertEducation(Education edu)
+        {
+            using (SQLiteTransaction trans = sqliteConn.BeginTransaction())
+            {
+                string query = "INSERT INTO t_education(education_level,description) " +
+                    " VALUES (@edu,@desc)";
+                SQLiteCommand comm = new SQLiteCommand(query, sqliteConn);
+                comm.Parameters.AddWithValue("@edu",edu.EducationLevel);
+                comm.Parameters.AddWithValue("@desc", edu.Description);
+                trans.Commit();
+                return comm.ExecuteNonQuery() > 0;
+            }
+        }
 
+        public bool UpdateEducation(Category cat, int id)
+        {
+            using (SQLiteTransaction trans = sqliteConn.BeginTransaction())
+            {
+                string query = "UPDATE t_education SET education_level=@edu,description=@desc WHERE id=@id ";
+                SQLiteCommand comm = new SQLiteCommand(query, sqliteConn);
+                comm.Parameters.AddWithValue("@edu", cat.CategoryName);
+                comm.Parameters.AddWithValue("@desc", cat.Description);
+                comm.Parameters.AddWithValue("@id", id);
+                trans.Commit();
+                return comm.ExecuteNonQuery() > 0;
+            }
+        }
+        public bool DeleteEducation(int id)
+        {
+            using (SQLiteTransaction trans = sqliteConn.BeginTransaction())
+            {
+                string query = "DELETE FROM t_education WHERE id=@id ";
+                SQLiteCommand comm = new SQLiteCommand(query, sqliteConn);
+                comm.Parameters.AddWithValue("@id", id);
+                trans.Commit();
+                return comm.ExecuteNonQuery() > 0;
+            }
+        }
         #endregion
 
 

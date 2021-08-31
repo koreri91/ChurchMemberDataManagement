@@ -29,6 +29,7 @@ namespace ChurchDataManagement.View.categorial
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.saveBtn = new System.Windows.Forms.Button();
@@ -135,12 +136,21 @@ namespace ChurchDataManagement.View.categorial
             this.ColumnInfo,
             this.ColumnActionEdit,
             this.ColumnActionDelete});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCategorial.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCategorial.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvCategorial.Location = new System.Drawing.Point(13, 13);
             this.dgvCategorial.Name = "dgvCategorial";
             this.dgvCategorial.ReadOnly = true;
             this.dgvCategorial.RowHeadersWidth = 62;
             this.dgvCategorial.RowTemplate.Height = 28;
+            this.dgvCategorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategorial.Size = new System.Drawing.Size(999, 322);
             this.dgvCategorial.TabIndex = 0;
             this.dgvCategorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorial_CellContentClick);
