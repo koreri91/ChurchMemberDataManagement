@@ -30,9 +30,9 @@ namespace ChurchDataManagement.View.member
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvMember = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.addMember = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvMember = new System.Windows.Forms.DataGridView();
             this.ColumnNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCategorialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +51,31 @@ namespace ChurchDataManagement.View.member
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(813, 595);
+            this.panel1.Size = new System.Drawing.Size(1028, 622);
             this.panel1.TabIndex = 0;
+            // 
+            // addMember
+            // 
+            this.addMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addMember.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMember.Location = new System.Drawing.Point(13, 558);
+            this.addMember.Name = "addMember";
+            this.addMember.Size = new System.Drawing.Size(132, 54);
+            this.addMember.TabIndex = 3;
+            this.addMember.Text = "Tambah";
+            this.addMember.UseVisualStyleBackColor = true;
+            this.addMember.Click += new System.EventHandler(this.addMember_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(828, 579);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 30);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Jumlah Member";
             // 
             // dgvMember
             // 
@@ -72,29 +95,8 @@ namespace ChurchDataManagement.View.member
             this.dgvMember.Name = "dgvMember";
             this.dgvMember.RowHeadersWidth = 62;
             this.dgvMember.RowTemplate.Height = 28;
-            this.dgvMember.Size = new System.Drawing.Size(788, 513);
+            this.dgvMember.Size = new System.Drawing.Size(1003, 530);
             this.dgvMember.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(613, 552);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Jumlah Member";
-            // 
-            // addMember
-            // 
-            this.addMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addMember.Location = new System.Drawing.Point(13, 545);
-            this.addMember.Name = "addMember";
-            this.addMember.Size = new System.Drawing.Size(113, 40);
-            this.addMember.TabIndex = 3;
-            this.addMember.Text = "Tambah";
-            this.addMember.UseVisualStyleBackColor = true;
             // 
             // ColumnNo
             // 
@@ -135,7 +137,7 @@ namespace ChurchDataManagement.View.member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 595);
+            this.ClientSize = new System.Drawing.Size(1028, 622);
             this.Controls.Add(this.panel1);
             this.Name = "DataMember";
             this.Text = "Data Member";

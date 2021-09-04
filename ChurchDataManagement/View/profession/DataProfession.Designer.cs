@@ -67,6 +67,7 @@ namespace ChurchDataManagement.View.profession
             this.groupBox1.Controls.Add(this.professionTxt);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 342);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(999, 268);
@@ -76,33 +77,37 @@ namespace ChurchDataManagement.View.profession
             // 
             // saveBtn
             // 
+            this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.Location = new System.Drawing.Point(229, 219);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 38);
+            this.saveBtn.Size = new System.Drawing.Size(124, 38);
             this.saveBtn.TabIndex = 4;
             this.saveBtn.Text = "Simpan";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // infoTxt
             // 
-            this.infoTxt.Location = new System.Drawing.Point(229, 77);
+            this.infoTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoTxt.Location = new System.Drawing.Point(229, 89);
             this.infoTxt.Multiline = true;
             this.infoTxt.Name = "infoTxt";
-            this.infoTxt.Size = new System.Drawing.Size(748, 135);
+            this.infoTxt.Size = new System.Drawing.Size(748, 123);
             this.infoTxt.TabIndex = 3;
             // 
             // professionTxt
             // 
+            this.professionTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.professionTxt.Location = new System.Drawing.Point(229, 35);
             this.professionTxt.Name = "professionTxt";
-            this.professionTxt.Size = new System.Drawing.Size(674, 26);
+            this.professionTxt.Size = new System.Drawing.Size(674, 38);
             this.professionTxt.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 76);
+            this.label2.Location = new System.Drawing.Point(25, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 29);
             this.label2.TabIndex = 1;
@@ -141,43 +146,54 @@ namespace ChurchDataManagement.View.profession
             this.dgvProfession.RowTemplate.Height = 28;
             this.dgvProfession.Size = new System.Drawing.Size(999, 322);
             this.dgvProfession.TabIndex = 0;
+            this.dgvProfession.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfession_CellContentClick);
             // 
             // ColumnNo
             // 
+            this.ColumnNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ColumnNo.HeaderText = "No";
             this.ColumnNo.MinimumWidth = 8;
             this.ColumnNo.Name = "ColumnNo";
             this.ColumnNo.ReadOnly = true;
+            this.ColumnNo.Width = 187;
             // 
             // ColumnProfession
             // 
+            this.ColumnProfession.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnProfession.HeaderText = "Pekerjaan";
             this.ColumnProfession.MinimumWidth = 8;
             this.ColumnProfession.Name = "ColumnProfession";
             this.ColumnProfession.ReadOnly = true;
+            this.ColumnProfession.Width = 116;
             // 
             // ColumnInfo
             // 
+            this.ColumnInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnInfo.HeaderText = "Keterangan";
             this.ColumnInfo.MinimumWidth = 8;
             this.ColumnInfo.Name = "ColumnInfo";
             this.ColumnInfo.ReadOnly = true;
+            this.ColumnInfo.Width = 128;
             // 
             // ColumnActionEdit
             // 
+            this.ColumnActionEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnActionEdit.HeaderText = "";
             this.ColumnActionEdit.MinimumWidth = 8;
             this.ColumnActionEdit.Name = "ColumnActionEdit";
             this.ColumnActionEdit.ReadOnly = true;
             this.ColumnActionEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnActionEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnActionEdit.Width = 29;
             // 
             // ColumnActionDelete
             // 
+            this.ColumnActionDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnActionDelete.HeaderText = "";
             this.ColumnActionDelete.MinimumWidth = 8;
             this.ColumnActionDelete.Name = "ColumnActionDelete";
             this.ColumnActionDelete.ReadOnly = true;
+            this.ColumnActionDelete.Width = 8;
             // 
             // DataProfession
             // 
@@ -187,6 +203,7 @@ namespace ChurchDataManagement.View.profession
             this.Controls.Add(this.panel1);
             this.Name = "DataProfession";
             this.Text = "Data Profession";
+            this.Load += new System.EventHandler(this.DataProfession_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

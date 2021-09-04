@@ -11,9 +11,18 @@ namespace ChurchDataManagement.View.member
 {
     public partial class DataMember : Form
     {
-        public DataMember()
+        private MainApp mainApp;
+        public DataMember(MainApp mainApp)
         {
             InitializeComponent();
+            this.mainApp = mainApp;
+        }
+
+        private void addMember_Click(object sender, EventArgs e)
+        {
+            AddMember dataMember = new AddMember();
+            dataMember.MdiParent = this.mainApp;
+            dataMember.Show();
         }
     }
 }

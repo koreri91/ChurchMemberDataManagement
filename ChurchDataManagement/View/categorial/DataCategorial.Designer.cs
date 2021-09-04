@@ -29,7 +29,7 @@ namespace ChurchDataManagement.View.categorial
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.saveBtn = new System.Windows.Forms.Button();
@@ -77,9 +77,10 @@ namespace ChurchDataManagement.View.categorial
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(229, 219);
+            this.saveBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Location = new System.Drawing.Point(229, 209);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 38);
+            this.saveBtn.Size = new System.Drawing.Size(117, 48);
             this.saveBtn.TabIndex = 4;
             this.saveBtn.Text = "Simpan";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -87,24 +88,26 @@ namespace ChurchDataManagement.View.categorial
             // 
             // infoTxt
             // 
-            this.infoTxt.Location = new System.Drawing.Point(229, 77);
+            this.infoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoTxt.Location = new System.Drawing.Point(229, 87);
             this.infoTxt.Multiline = true;
             this.infoTxt.Name = "infoTxt";
-            this.infoTxt.Size = new System.Drawing.Size(748, 135);
+            this.infoTxt.Size = new System.Drawing.Size(748, 116);
             this.infoTxt.TabIndex = 3;
             // 
             // categorialNameTxt
             // 
+            this.categorialNameTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categorialNameTxt.Location = new System.Drawing.Point(229, 35);
             this.categorialNameTxt.Name = "categorialNameTxt";
-            this.categorialNameTxt.Size = new System.Drawing.Size(674, 26);
+            this.categorialNameTxt.Size = new System.Drawing.Size(674, 38);
             this.categorialNameTxt.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 76);
+            this.label2.Location = new System.Drawing.Point(25, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 29);
             this.label2.TabIndex = 1;
@@ -114,7 +117,7 @@ namespace ChurchDataManagement.View.categorial
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 35);
+            this.label1.Location = new System.Drawing.Point(25, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 29);
             this.label1.TabIndex = 0;
@@ -136,16 +139,17 @@ namespace ChurchDataManagement.View.categorial
             this.ColumnInfo,
             this.ColumnActionEdit,
             this.ColumnActionDelete});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCategorial.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCategorial.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCategorial.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvCategorial.Location = new System.Drawing.Point(13, 13);
+            this.dgvCategorial.MultiSelect = false;
             this.dgvCategorial.Name = "dgvCategorial";
             this.dgvCategorial.ReadOnly = true;
             this.dgvCategorial.RowHeadersWidth = 62;
@@ -175,33 +179,36 @@ namespace ChurchDataManagement.View.categorial
             // 
             // ColumnInfo
             // 
-            this.ColumnInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnInfo.HeaderText = "Keterangan";
             this.ColumnInfo.MinimumWidth = 8;
             this.ColumnInfo.Name = "ColumnInfo";
             this.ColumnInfo.ReadOnly = true;
+            this.ColumnInfo.Width = 128;
             // 
             // ColumnActionEdit
             // 
             this.ColumnActionEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ColumnActionEdit.HeaderText = "";
-            this.ColumnActionEdit.MinimumWidth = 100;
+            this.ColumnActionEdit.MinimumWidth = 80;
             this.ColumnActionEdit.Name = "ColumnActionEdit";
             this.ColumnActionEdit.ReadOnly = true;
             this.ColumnActionEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnActionEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnActionEdit.Text = "Edit";
             this.ColumnActionEdit.UseColumnTextForButtonValue = true;
+            this.ColumnActionEdit.Width = 80;
             // 
             // ColumnActionDelete
             // 
             this.ColumnActionDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ColumnActionDelete.HeaderText = "";
-            this.ColumnActionDelete.MinimumWidth = 100;
+            this.ColumnActionDelete.MinimumWidth = 80;
             this.ColumnActionDelete.Name = "ColumnActionDelete";
             this.ColumnActionDelete.ReadOnly = true;
             this.ColumnActionDelete.Text = "Hapus";
             this.ColumnActionDelete.UseColumnTextForButtonValue = true;
+            this.ColumnActionDelete.Width = 80;
             // 
             // DataCategorial
             // 

@@ -5,52 +5,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ChurchDataManagement.View.education
+namespace ChurchDataManagement.View.statusinfamily
 {
-    public partial class DataEducation : Form
+    public partial class DataStatusInFamily : Form
     {
         private DAO sqlConn;
-        public DataEducation()
+        public DataStatusInFamily()
         {
             InitializeComponent();
             this.sqlConn = new DAO();
         }
 
-        private List<Education> educations;
+        private List<StatusInFamily> statuses;
         private void loadData()
         {
             this.sqlConn.open();
-            dgvEducation.Rows.Clear();
-            this.educations = this.sqlConn.getEducations();
-            foreach (Education edu in educations)
+            dgvStatusInFamily.Rows.Clear();
+            this.statuses = this.sqlConn.getStatusInFamily();
+            foreach (StatusInFamily status in statuses)
             {
-                dgvEducation.Rows.Add("000", edu.EducationLevel, edu.Description,"Edit","Hapus");
+                dgvStatusInFamily.Rows.Add("000", status.StatusName, status.Description, "Edit", "Hapus");
             }
         }
 
+        private int idUpdate;
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if(eduLevelTxt.Text.Length == 0)
+            if (statusNameTxt.Text.Length == 0)
             {
-                MessageBox.Show(this, "Tingkat Pendidikan belum diinput");
-            }else
+                MessageBox.Show(this, "Pekerjaan belum diinput");
+            }
+            else
             {
                 bool result = false;
                 if (saveBtn.Text.Equals("Simpan"))
                 {
-                    result = this.sqlConn.InsertEducation(
-                                       new Model.Education(eduLevelTxt.Text, infoTxt.Text)
+                    result = this.sqlConn.InsertStatusInFamily(
+                                       new Model.StatusInFamily(statusNameTxt.Text, infoTxt.Text)
                                        );
                 }
                 else if (saveBtn.Text.Equals("Update"))
                 {
-                    result = this.sqlConn.UpdateEducation(
-                                     new Model.Education(eduLevelTxt.Text, infoTxt.Text),
+                    result = this.sqlConn.UpdateStatusInFamily(
+                                     new Model.StatusInFamily(statusNameTxt.Text, infoTxt.Text),
                                      idUpdate);
                 }
                 if (result)
                 {
-                    eduLevelTxt.Clear();
+                    statusNameTxt.Clear();
                     infoTxt.Clear();
                     this.idUpdate = -1;
                     this.saveBtn.Text = "Simpan";
@@ -58,33 +60,29 @@ namespace ChurchDataManagement.View.education
                 }
             }
         }
-       
-        private void DataEducation_Load(object sender, EventArgs e)
-        {
-            this.loadData();
-        }
-        
-        private int idUpdate;
 
-        private void dgvEducation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvStatusInFamily_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
-                Console.WriteLine("Delete Cell");
-                if (this.sqlConn.DeleteEducation(educations.ElementAt(e.RowIndex).Id))
+                if (this.sqlConn.DeleteStatusInFamily(statuses.ElementAt(e.RowIndex).Id))
                 {
                     this.loadData();
                 }
             }
             else if (e.ColumnIndex == 3 && e.RowIndex != -1)
             {
-                Console.WriteLine("Edit Cell");
-                Education item = educations.ElementAt(e.RowIndex);
+                StatusInFamily item = statuses.ElementAt(e.RowIndex);
                 this.idUpdate = item.Id;
-                eduLevelTxt.Text = item.EducationLevel;
+                statusNameTxt.Text = item.StatusName;
                 infoTxt.Text = item.Description;
                 saveBtn.Text = "Update";
             }
+        }
+
+        private void DataStatusInFamily_Load(object sender, EventArgs e)
+        {
+            this.loadData();
         }
     }
 }

@@ -5,28 +5,32 @@ using System.Text;
 
 namespace ChurchDataManagement.Model
 {
-    public class Category
+    public class PositionInChurch
     {
 
         private int id;
-        private string categoryName;
+        private string positionName;
         private string description;
 
-        public Category(string categoryName, string description)
+        public PositionInChurch()
         {
-            this.Id = id;
-            this.CategoryName = categoryName;
+        }
+
+        public PositionInChurch(string positionName, string description)
+        {
+            this.PositionName = positionName;
             this.Description = description;
         }
-        public Category(int id, string categoryName, string description)
+
+        public PositionInChurch(int id, string positionName, string description)
         {
             this.Id = id;
-            this.CategoryName = categoryName;
+            this.PositionName = positionName;
             this.Description = description;
         }
 
         public int Id { get => id; set => id = value; }
-        public string CategoryName { get => categoryName; set => categoryName = value; }
+        public string PositionName { get => positionName; set => positionName = value; }
         public string Description { get => description; set => description = value; }
     }
 

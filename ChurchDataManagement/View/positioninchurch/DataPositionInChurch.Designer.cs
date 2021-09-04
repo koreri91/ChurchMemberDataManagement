@@ -1,7 +1,7 @@
 ﻿
-namespace ChurchDataManagement.View.education
+namespace ChurchDataManagement.View.statusinchurch
 {
-    partial class DataEducation
+    partial class DataPositionInChurch
     {
         /// <summary>
         /// Required designer variable.
@@ -29,35 +29,35 @@ namespace ChurchDataManagement.View.education
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.saveBtn = new System.Windows.Forms.Button();
             this.infoTxt = new System.Windows.Forms.TextBox();
-            this.eduLevelTxt = new System.Windows.Forms.TextBox();
+            this.positionNameTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvEducation = new System.Windows.Forms.DataGridView();
+            this.dgvPositionInChurch = new System.Windows.Forms.DataGridView();
             this.ColumnNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEducationLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPositionInChurch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnActionEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnActionDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPositionInChurch)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.dgvEducation);
+            this.panel1.Controls.Add(this.dgvPositionInChurch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1028, 622);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -65,15 +65,15 @@ namespace ChurchDataManagement.View.education
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.saveBtn);
             this.groupBox1.Controls.Add(this.infoTxt);
-            this.groupBox1.Controls.Add(this.eduLevelTxt);
+            this.groupBox1.Controls.Add(this.positionNameTxt);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 342);
+            this.groupBox1.Location = new System.Drawing.Point(15, 342);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(999, 268);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Data Pendidikan";
             // 
@@ -97,13 +97,13 @@ namespace ChurchDataManagement.View.education
             this.infoTxt.Size = new System.Drawing.Size(748, 116);
             this.infoTxt.TabIndex = 3;
             // 
-            // eduLevelTxt
+            // positionNameTxt
             // 
-            this.eduLevelTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eduLevelTxt.Location = new System.Drawing.Point(229, 35);
-            this.eduLevelTxt.Name = "eduLevelTxt";
-            this.eduLevelTxt.Size = new System.Drawing.Size(674, 38);
-            this.eduLevelTxt.TabIndex = 2;
+            this.positionNameTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionNameTxt.Location = new System.Drawing.Point(229, 35);
+            this.positionNameTxt.Name = "positionNameTxt";
+            this.positionNameTxt.Size = new System.Drawing.Size(674, 38);
+            this.positionNameTxt.TabIndex = 2;
             // 
             // label2
             // 
@@ -121,44 +121,44 @@ namespace ChurchDataManagement.View.education
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 29);
+            this.label1.Size = new System.Drawing.Size(129, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tingkat Pendidikan";
+            this.label1.Text = "Nama Posisi";
             // 
-            // dgvEducation
+            // dgvPositionInChurch
             // 
-            this.dgvEducation.AllowUserToAddRows = false;
-            this.dgvEducation.AllowUserToDeleteRows = false;
-            this.dgvEducation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPositionInChurch.AllowUserToAddRows = false;
+            this.dgvPositionInChurch.AllowUserToDeleteRows = false;
+            this.dgvPositionInChurch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEducation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEducation.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dgvEducation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEducation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPositionInChurch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPositionInChurch.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgvPositionInChurch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPositionInChurch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNo,
-            this.ColumnEducationLevel,
+            this.ColumnPositionInChurch,
             this.ColumnInfo,
             this.ColumnActionEdit,
             this.ColumnActionDelete});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEducation.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvEducation.Location = new System.Drawing.Point(13, 13);
-            this.dgvEducation.MultiSelect = false;
-            this.dgvEducation.Name = "dgvEducation";
-            this.dgvEducation.ReadOnly = true;
-            this.dgvEducation.RowHeadersWidth = 62;
-            this.dgvEducation.RowTemplate.Height = 28;
-            this.dgvEducation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEducation.Size = new System.Drawing.Size(999, 322);
-            this.dgvEducation.TabIndex = 0;
-            this.dgvEducation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEducation_CellContentClick);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPositionInChurch.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPositionInChurch.Location = new System.Drawing.Point(15, 13);
+            this.dgvPositionInChurch.MultiSelect = false;
+            this.dgvPositionInChurch.Name = "dgvPositionInChurch";
+            this.dgvPositionInChurch.ReadOnly = true;
+            this.dgvPositionInChurch.RowHeadersWidth = 62;
+            this.dgvPositionInChurch.RowTemplate.Height = 28;
+            this.dgvPositionInChurch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPositionInChurch.Size = new System.Drawing.Size(999, 322);
+            this.dgvPositionInChurch.TabIndex = 2;
+            this.dgvPositionInChurch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPositionInChurch_CellContentClick);
             // 
             // ColumnNo
             // 
@@ -169,14 +169,14 @@ namespace ChurchDataManagement.View.education
             this.ColumnNo.ReadOnly = true;
             this.ColumnNo.Width = 80;
             // 
-            // ColumnEducationLevel
+            // ColumnPositionInChurch
             // 
-            this.ColumnEducationLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnEducationLevel.HeaderText = "Tingkat Pendidikan";
-            this.ColumnEducationLevel.MinimumWidth = 8;
-            this.ColumnEducationLevel.Name = "ColumnEducationLevel";
-            this.ColumnEducationLevel.ReadOnly = true;
-            this.ColumnEducationLevel.Width = 164;
+            this.ColumnPositionInChurch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnPositionInChurch.HeaderText = "Posisi";
+            this.ColumnPositionInChurch.MinimumWidth = 8;
+            this.ColumnPositionInChurch.Name = "ColumnPositionInChurch";
+            this.ColumnPositionInChurch.ReadOnly = true;
+            this.ColumnPositionInChurch.Width = 86;
             // 
             // ColumnInfo
             // 
@@ -196,6 +196,7 @@ namespace ChurchDataManagement.View.education
             this.ColumnActionEdit.ReadOnly = true;
             this.ColumnActionEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnActionEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnActionEdit.Width = 150;
             // 
             // ColumnActionDelete
             // 
@@ -204,20 +205,21 @@ namespace ChurchDataManagement.View.education
             this.ColumnActionDelete.MinimumWidth = 100;
             this.ColumnActionDelete.Name = "ColumnActionDelete";
             this.ColumnActionDelete.ReadOnly = true;
+            this.ColumnActionDelete.Width = 150;
             // 
-            // DataEducation
+            // DataPositionInChurch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 622);
             this.Controls.Add(this.panel1);
-            this.Name = "DataEducation";
-            this.Text = "Data Education";
-            this.Load += new System.EventHandler(this.DataEducation_Load);
+            this.Name = "DataPositionInChurch";
+            this.Text = "Posisi didalam Gereja";
+            this.Load += new System.EventHandler(this.DataPositionInChurch_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPositionInChurch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,15 +227,15 @@ namespace ChurchDataManagement.View.education
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvEducation;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.TextBox infoTxt;
-        private System.Windows.Forms.TextBox eduLevelTxt;
+        private System.Windows.Forms.TextBox positionNameTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvPositionInChurch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEducationLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPositionInChurch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInfo;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnActionEdit;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnActionDelete;

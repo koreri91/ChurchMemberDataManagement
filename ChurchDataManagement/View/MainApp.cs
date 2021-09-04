@@ -3,6 +3,8 @@ using ChurchDataManagement.View.categorial;
 using ChurchDataManagement.View.education;
 using ChurchDataManagement.View.member;
 using ChurchDataManagement.View.profession;
+using ChurchDataManagement.View.statusinchurch;
+using ChurchDataManagement.View.statusinfamily;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,38 +16,75 @@ using System.Windows.Forms;
 
 namespace ChurchDataManagement
 {
-    public partial class Form1 : Form
+    public partial class MainApp : Form
     {
-        public Form1()
+        public MainApp()
         {
             InitializeComponent();
             new DAO().open();
         }
 
+        private void setMDIColor()
+        {
+            MdiClient mdiClient;
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    // Attempt to cast the control to type MdiClient.
+                    mdiClient = (MdiClient)ctl;
+                    // Set the BackColor of the MdiClient control.
+                    mdiClient.BackColor = Color.AliceBlue; ;
+                }
+                catch (InvalidCastException exc)
+                {
+                    // Catch and ignore the error if casting failed.
+                }
+            }
+        }
+
         private void displayEducation() {
+            setMDIColor();
             DataEducation education = new DataEducation();
             education.MdiParent = this;
             education.Show();
         }
         private void displayMember()
         {
-            DataMember member = new DataMember();
+            setMDIColor();
+            DataMember member = new DataMember(this);
             member.MdiParent = this;
             member.Show();
         }
 
         private void displayProfession() {
+            setMDIColor();
             DataProfession profession = new DataProfession();
             profession.MdiParent = this;
             profession.Show();
         }
 
         private void displayCategorial() {
+            setMDIColor();
             DataCategorial dataCategorial = new DataCategorial();
             dataCategorial.MdiParent = this;
             dataCategorial.Show();
         }
 
+        private void displayStatusInFamily()
+        {
+            setMDIColor();
+            DataStatusInFamily dataStatusInFamily = new DataStatusInFamily();
+            dataStatusInFamily.MdiParent = this;
+            dataStatusInFamily.Show();
+        }
+        private void displayPositionInChurch()
+        {
+            setMDIColor();
+            DataPositionInChurch dataPositionInChurch = new DataPositionInChurch();
+            dataPositionInChurch.MdiParent = this;
+            dataPositionInChurch.Show();
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -74,12 +113,12 @@ namespace ChurchDataManagement
 
         private void statusInFamilyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.displayStatusInFamily();
         }
 
         private void positionInChurchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.displayPositionInChurch();
         }
 
 

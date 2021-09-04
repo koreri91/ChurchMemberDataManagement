@@ -1,41 +1,38 @@
-﻿using ChurchDataManagement.Controller;
+﻿
+using ChurchDataManagement.Controller;
 using ChurchDataManagement.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-
-namespace ChurchDataManagement.View.profession
+namespace ChurchDataManagement.View.statusinchurch
 {
-    public partial class DataProfession : Form
+   
+    public partial class DataPositionInChurch : Form
     {
         private DAO sqlConn;
-        public DataProfession()
+        public DataPositionInChurch()
         {
             InitializeComponent();
             this.sqlConn = new DAO();
         }
 
-        private List<Profession> professions;
+        private List<PositionInChurch> positionsInChurch;
         private void loadData()
         {
             this.sqlConn.open();
-            dgvProfession.Rows.Clear();
-            this.professions = this.sqlConn.getProfessions();
-            foreach (Profession profession in professions)
+            dgvPositionInChurch.Rows.Clear();
+            this.positionsInChurch = this.sqlConn.getPositionsInChurch();
+            foreach (PositionInChurch position in positionsInChurch)
             {
-                dgvProfession.Rows.Add("000",profession.Title,profession.Description, "Edit", "Hapus");
+                dgvPositionInChurch.Rows.Add("000", position.PositionName, position.Description, "Edit", "Hapus");
             }
         }
 
         private int idUpdate;
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (professionTxt.Text.Length == 0)
+            if (positionNameTxt.Text.Length == 0)
             {
                 MessageBox.Show(this, "Pekerjaan belum diinput");
             }
@@ -44,19 +41,19 @@ namespace ChurchDataManagement.View.profession
                 bool result = false;
                 if (saveBtn.Text.Equals("Simpan"))
                 {
-                    result = this.sqlConn.InsertProfession(
-                                       new Model.Profession(professionTxt.Text, infoTxt.Text)
+                    result = this.sqlConn.InsertPositionInChurch(
+                                       new Model.PositionInChurch(positionNameTxt.Text, infoTxt.Text)
                                        );
                 }
                 else if (saveBtn.Text.Equals("Update"))
                 {
-                    result = this.sqlConn.UpdateProfession(
-                                     new Model.Profession(professionTxt.Text, infoTxt.Text),
+                    result = this.sqlConn.UpdatePositionInChurch(
+                                     new Model.PositionInChurch(positionNameTxt.Text, infoTxt.Text),
                                      idUpdate);
                 }
                 if (result)
                 {
-                    professionTxt.Clear();
+                    positionNameTxt.Clear();
                     infoTxt.Clear();
                     this.idUpdate = -1;
                     this.saveBtn.Text = "Simpan";
@@ -65,28 +62,26 @@ namespace ChurchDataManagement.View.profession
             }
         }
 
-        private void dgvProfession_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPositionInChurch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
-                Console.WriteLine("Delete Cell");
-                if (this.sqlConn.DeleteProfession(professions.ElementAt(e.RowIndex).Id))
+                if (this.sqlConn.DeletePositionInChurch(positionsInChurch.ElementAt(e.RowIndex).Id))
                 {
                     this.loadData();
                 }
             }
             else if (e.ColumnIndex == 3 && e.RowIndex != -1)
             {
-                Console.WriteLine("Edit Cell");
-                Profession item = professions.ElementAt(e.RowIndex);
+                PositionInChurch item = positionsInChurch.ElementAt(e.RowIndex);
                 this.idUpdate = item.Id;
-                professionTxt.Text = item.Title;
+                positionNameTxt.Text = item.PositionName;
                 infoTxt.Text = item.Description;
                 saveBtn.Text = "Update";
             }
         }
 
-        private void DataProfession_Load(object sender, EventArgs e)
+        private void DataPositionInChurch_Load(object sender, EventArgs e)
         {
             this.loadData();
         }
